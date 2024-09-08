@@ -1,6 +1,6 @@
+import React from 'react';
 import type { Preview } from "@storybook/react";
-
-import '../src/index.scss';
+import ModalProvider from '../src/components/ModalProvider';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +11,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    Story => (
+      <ModalProvider>
+        <Story />
+      </ModalProvider>
+    ),
+  ]
 };
 
 export default preview;

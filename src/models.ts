@@ -6,6 +6,12 @@ export interface Income {
     endDate?: Date;
 }
 
+export interface Payee {
+    name: string;
+
+    payments: Income[];
+}
+
 export enum PaymentFrequency {
     Weekly = "weekly",
     BiWeekly = "bi-weekly",

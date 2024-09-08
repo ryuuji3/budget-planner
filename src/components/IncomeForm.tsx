@@ -86,7 +86,7 @@ function IncomeForm({ values = {}, onSubmit }: IncomeFormProps) {
 }
 
 interface IncomeFormProps {
-    values: Partial<FieldValues>;
+    values?: Partial<FieldValues>;
     onSubmit: (data: FieldValues) => void;
 }
 

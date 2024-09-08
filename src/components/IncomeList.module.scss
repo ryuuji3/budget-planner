@@ -1,0 +1,24 @@
+$fg-text: hsl(0, 0%, 10%);
+$bg-primary: hsl(0, 0%, 95%);
+$bg-primary-dark: hsl(0, 0%, 80%);
+
+.container {
+    display: flex;
+
+    > .item {
+        flex: 1;
+
+        &.add {
+            display: block;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            background-color: $bg-primary;
+            color: $fg-text;
+            font-size: large;
+
+            &:hover {
+                background-color: $bg-primary-dark;
+            }
+        }
+    }
+}
