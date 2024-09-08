@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-import './IncomeForm.css';
+import styles from './IncomeForm.module.scss';
+import { Income, PaymentFrequency } from "../models";
 
 function IncomeForm({ values = {}, onSubmit }: IncomeFormProps) {
     const { 
@@ -10,7 +11,7 @@ function IncomeForm({ values = {}, onSubmit }: IncomeFormProps) {
     return (
         <form 
             onSubmit={handleSubmit(onSubmit)}
-            className="container"
+            className={styles.container}
         >
             <div className="input-group required">
                 <label htmlFor="payee" className="label">🤨 Where is this money coming from?</label>
@@ -47,9 +48,9 @@ function IncomeForm({ values = {}, onSubmit }: IncomeFormProps) {
                     })}
                 >
                     <option value="">Select frequency</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="bi-weekly">Bi-weekly</option>
-                    <option value="monthly">Monthly</option>
+                    <option value={PaymentFrequency.Weekly}>Weekly</option>
+                    <option value={PaymentFrequency.BiWeekly}>Bi-weekly</option>
+                    <option value={PaymentFrequency.Monthly}>Monthly</option>
                 </select>
             </div>
 
@@ -89,12 +90,6 @@ interface IncomeFormProps {
     onSubmit: (data: FieldValues) => void;
 }
 
-type FieldValues = {
-    payee: string;
-    amount: number;
-    frequency: string;
-    startDate: Date;
-    endDate: Date;
-}
+type FieldValues = Income;
 
 export default IncomeForm;

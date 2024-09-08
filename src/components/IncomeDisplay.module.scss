@@ -1,0 +1,55 @@
+$fg-text: hsl(0, 0%, 10%);
+$bg-primary: hsl(0, 0%, 95%);
+$bg-primary-dark: hsl(0, 0%, 80%);
+$active-color: green;
+$inactive-color: red;
+
+.container {
+    display: block;
+
+    padding: 1rem;
+
+    border: $inactive-color solid 2px;
+
+    color: $fg-text;
+    background-color: $bg-primary-dark;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    position: relative;
+
+    > .details {
+        display: block;
+
+        text-align: center;
+
+        > .payee {
+            font-size: large;
+        }
+
+        > .amount {
+            font-size: x-large;
+        }
+    }
+
+    > .status {
+        display: block;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 0.25rem;
+
+        background-color: $inactive-color;
+    }
+
+    &.active {
+        border: $active-color solid 2px;
+        background-color: $bg-primary;
+
+        > .status {
+            background-color: $active-color;
+        }
+    }
+}

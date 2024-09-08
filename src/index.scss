@@ -1,0 +1,32 @@
+@import-normalize;
+
+.input-group {
+  margin: 1rem auto;
+
+  > label, > .input, > .help-text {
+    display: block;
+  }
+
+  &.required > label:after {
+    content: "*";
+    color: hsl(0, 100%, 70%);
+  }
+
+  &.optional > label:after {
+    content: "(optional)";
+    color: hsl(220, 25%, 70%);
+    margin-left: 0.5rem;
+  }
+
+  > .help-text {
+    color: hsl(220, 25%, 70%);
+  }
+}
+
+form > button[type="submit"] {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: hsl(220, 100%, 70%);
+  border: 1px solid hsl(220, 100%, 70%);
+  font-size: large;
+}
